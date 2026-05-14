@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>Kasper Mini App</title>
+
+  <link
+    rel="stylesheet"
+    href="./style.css"
+  />
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+
+<main class="app-shell">
+
+<section class="view active" id="dealsView">
+
+<header class="screen-header">
+
+<div>
+<p class="eyebrow">Kasper</p>
+<h1>Мои сделки</h1>
+</div>
+
+<button
+class="icon-button"
+id="refreshDeals"
+type="button"
+>
+↻
+</button>
+
+</header>
+
+<button
+class="primary-action"
+id="openCreate"
+type="button"
+>
+<span>+</span>
+Создать сделку
+</button>
+
+<div class="segmented">
+
+<button
+class="segment active"
+data-filter="active"
+>
+Активные
+</button>
+
+<button
+class="segment"
+data-filter="history"
+>
+История
+</button>
+
+</div>
+
+<div class="deal-list" id="dealList"></div>
+
+</section>
+
+<section class="view" id="walletView">
+
+<header class="screen-header">
+<div>
+<p class="eyebrow">Kasper</p>
+<h1>Баланс</h1>
+</div>
+</header>
+
+<div
+class="balance-grid"
+id="balanceGrid"
+></div>
+
+<h2>История транзакций</h2>
+
+<div
+class="transaction-list"
+id="transactionList"
+></div>
+
+</section>
+
+<section class="view" id="createView">
+
+<header class="screen-header">
+
+<div>
+<p class="eyebrow">Kasper</p>
+<h1>Создать сделку</h1>
+</div>
+
+</header>
+
+<form
+class="deal-form"
+id="dealForm"
+>
+
+<label>
+Тип сделки
+
+<select name="type">
+
+<option value="NFT">
+NFT подарок
+</option>
+
+<option value="Stars">
+Stars
+</option>
+
+<option value="TON">
+TON
+</option>
+
+<option value="USDT">
+USDT
+</option>
+
+</select>
+</label>
+
+<label>
+Сумма
+
+<input
+name="amount"
+type="number"
+required
+/>
+</label>
+
+<label>
+Валюта
+
+<select name="currency">
+
+<option value="Stars">
+Stars
+</option>
+
+<option value="TON">
+TON
+</option>
+
+<option value="USDT">
+USDT
+</option>
+
+<option value="RUB">
+RUB
+</option>
+
+</select>
+</label>
+
+<label>
+Покупатель
+
+<input
+name="buyer"
+placeholder="@username"
+required
+/>
+</label>
+
+<button
+class="primary-action"
+type="submit"
+>
+Создать
+</button>
+
+</form>
+
+</section>
+
+<section class="view" id="dealView">
+
+<header class="screen-header">
+
+<div>
+<p class="eyebrow">Kasper</p>
+<h1>Сделка</h1>
+</div>
+
+<button
+class="icon-button"
+id="backDeals"
+type="button"
+>
+←
+</button>
+
+</header>
+
+<div id="dealPage"></div>
+
+</section>
+
+<section class="view" id="profileView">
+
+<header class="screen-header">
+
+<div>
+<p class="eyebrow">Kasper</p>
+<h1>Профиль</h1>
+</div>
+
+</header>
+
+<div class="profile-card">
+
+<div
+class="avatar"
+id="avatar"
+>
+K
+</div>
+
+<div>
+<h2 id="profileName">
+Kasper user
+</h2>
+
+<p id="profileMeta">
+Telegram Mini App
+</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<nav class="bottom-nav">
+
+<button
+class="nav-item active"
+data-view="dealsView"
+>
+Сделки
+</button>
+
+<button
+class="nav-item"
+data-view="walletView"
+>
+Баланс
+</button>
+
+<button
+class="nav-item"
+data-view="createView"
+>
+Создать
+</button>
+
+<button
+class="nav-item"
+data-view="profileView"
+>
+Профиль
+</button>
+
+</nav>
+
+<script src="./app.js"></script>
+
+</body>
+</html>
